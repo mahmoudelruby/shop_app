@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/features/categories/categories.dart';
 import 'package:shop_app/features/profile/profile_screen.dart';
 import 'package:shop_app/foundation/sp_icon.dart';
+import 'package:shop_app/foundation/theme/colors.dart';
 
 import '../home_Page/Home_Screen.dart';
 
@@ -23,7 +24,7 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: const Color(0xfffe416c),
+        selectedItemColor: AppColor.buttonColor,
         currentIndex: currentIndex,
         onTap: (index) {
           setState(() {

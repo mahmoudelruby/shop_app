@@ -37,6 +37,7 @@ class ProfileItem extends StatelessWidget {
             ),
           ),
         ),
+
       ],
     );
   }

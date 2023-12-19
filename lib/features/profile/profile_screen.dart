@@ -19,7 +19,9 @@ class _State extends State<ProfilePage> {
           style: Theme.of(context).textTheme.titleLarge,
         ),
       ),
-      body: ProfileWithoutLogin(),
+      body: SingleChildScrollView(
+        child: ProfileWithoutLogin(),
+      ),
     );
   }
 }
