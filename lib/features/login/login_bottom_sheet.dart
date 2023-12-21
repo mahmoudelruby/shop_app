@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shop_app/features/home_Page/Home_Screen.dart';
+import 'package:shop_app/features/register_Page/register_page.dart';
 import 'package:shop_app/foundation/text_form_field.dart';
 import 'package:shop_app/foundation/theme/colors.dart';
 
 import '../../foundation/custom_eleveted_button.dart';
 
 class LoginBottomSheet extends StatelessWidget {
- String? email='';
- String? password ='';
- TextEditingController? mailController= new TextEditingController();
-TextEditingController? passwordController =new TextEditingController();
-
+  String? email = '';
+  String? password = '';
+  TextEditingController? mailController = new TextEditingController();
+  TextEditingController? passwordController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -82,23 +83,26 @@ TextEditingController? passwordController =new TextEditingController();
               height: 30,
             ),
             Center(
-              child: RichText(
-                  text: TextSpan(children: [
-                const TextSpan(
-                    text: 'New User ? ',
-                    style: TextStyle(
-                      color: Colors.black54,
-                      fontSize: 13,
-                    )),
-                TextSpan(
-                    onEnter: (event) => () {},
-                    text: '  Register  ',
-                    style: TextStyle(
-                        color: AppColor.buttonColor,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold)),
-              ])),
-            ),
+                child: Row(
+              children: [
+                Text("New User ?"),
+                InkWell(
+                  onTap: () {
+                    {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const RegisterPage()),
+                      );
+                    }
+                  },
+                  child: Text(
+                    "Register ",
+                    style: TextStyle(color: AppColor.buttonColor),
+                  ),
+                )
+              ],
+            )),
             const SizedBox(
               height: 10,
             ),
@@ -106,7 +110,12 @@ TextEditingController? passwordController =new TextEditingController();
                 child: SizedBox(
                     width: MediaQuery.of(context).size.width,
                     child: CustomElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomeScreen()),
+                        );
+                      },
                       text: 'CONTINUE',
                     ))),
             SizedBox(
