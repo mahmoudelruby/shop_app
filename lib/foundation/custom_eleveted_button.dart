@@ -12,13 +12,11 @@ Function()  onPressed;
     return ElevatedButton(
         style: ButtonStyle(
             elevation: MaterialStateProperty.all(5),
-            backgroundColor:
-            MaterialStateProperty.all(AppColor.buttonColor)),
+            backgroundColor: MaterialStateProperty.all(AppColor.buttonColor)),
         onPressed: onPressed,
-        child: Container(
-            child: Text(
-              text,
-              style: TextStyle(color: AppColor.whiteColor),
-            )));
+        child: Text(
+          text,
+          style: TextStyle(color: AppColor.whiteColor),
+        ));
   }
 }
