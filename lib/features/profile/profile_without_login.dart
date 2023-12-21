@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shop_app/features/profile/footer_content.dart';
 import 'package:shop_app/features/profile/header%20content.dart';
 import 'package:shop_app/features/profile/profile_item.dart';
 import 'package:shop_app/foundation/theme/colors.dart';
+
+import '../login/login_bottom_sheet.dart';
 
 class ProfileWithoutLogin extends StatelessWidget {
   const ProfileWithoutLogin({Key? key}) : super(key: key);
@@ -23,6 +26,9 @@ class ProfileWithoutLogin extends StatelessWidget {
                 iconPath: 'orders.png',
                 title: 'Orders',
                 caption: 'Check your order',
+                onTab: () {
+                  Get.bottomSheet(LoginBottomSheet());
+                },
               ),
               ProfileItem(
                 iconPath: 'customer-support.png',

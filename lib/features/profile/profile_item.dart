@@ -5,8 +5,9 @@ class ProfileItem extends StatelessWidget {
   String title;
   String? caption;
   String iconPath;
+  Function()? onTab;
   ProfileItem(
-      {required this.iconPath, required this.title, required this.caption}) {}
+      {required this.iconPath, required this.title, required this.caption,this.onTab}) ;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class ProfileItem extends StatelessWidget {
         SizedBox(
           height: 68,
           child: ListTile(
-            leading: SPIcon(
+            leading: BottomNavBarIcon(
               assetName: iconPath,
             ),
             title: Text(
@@ -29,7 +30,7 @@ class ProfileItem extends StatelessWidget {
                   )
                 : null,
             trailing: InkWell(
-              onTap: () {},
+              onTap: onTab ,
               child: const Icon(
                 Icons.chevron_right,
                 size: 16,

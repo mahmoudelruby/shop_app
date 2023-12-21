@@ -32,17 +32,17 @@ class _LandingPageState extends State<LandingPage> {
           });
         },
         items: [  BottomNavigationBarItem(
-            icon: SPIcon(
+            icon: BottomNavBarIcon(
                 assetName: 'logo-black.png',
                 isSelected: 0==currentIndex,),
             label: 'home'),
           BottomNavigationBarItem(
-              icon: SPIcon(
+              icon: BottomNavBarIcon(
                   assetName: 'categories.png',
                  isSelected: 1==currentIndex,),
               label: 'Categories'),
           BottomNavigationBarItem(
-              icon: SPIcon(
+              icon: BottomNavBarIcon(
                   assetName: 'profile.png',
                  isSelected: 2==currentIndex,),
               label: 'Profile'),

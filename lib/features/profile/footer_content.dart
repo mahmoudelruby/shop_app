@@ -7,10 +7,10 @@ class FooterContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SPTextButton(text: 'FAQs',),
-        SPTextButton(text: 'ABOUT US',),
-        SPTextButton(text: 'TERMS OF USE',),
-        SPTextButton(text: 'PRIVACY POLICY',),
+        FooterTextButton(text: 'FAQs',),
+        FooterTextButton(text: 'ABOUT US',),
+        FooterTextButton(text: 'TERMS OF USE',),
+        FooterTextButton(text: 'PRIVACY POLICY',),
 
       ],
     );
