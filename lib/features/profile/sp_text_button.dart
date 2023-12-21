@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/foundation/theme/colors.dart';
 
-class SPTextButton extends StatelessWidget {
+class FooterTextButton extends StatelessWidget {
 
   String text;
-  SPTextButton({required this.text }){}
+  FooterTextButton({required this.text }){}
 
   @override
   Widget build(BuildContext context) {

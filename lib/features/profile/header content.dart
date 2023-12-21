@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
+import 'package:shop_app/features/login/login_bottom_sheet.dart';
+import '../../foundation/custom_eleveted_button.dart';
 import '../../foundation/theme/colors.dart';
 
 class HeaderContent extends StatelessWidget {
@@ -36,17 +38,12 @@ class HeaderContent extends StatelessWidget {
         Positioned(
             bottom: 22,
             left: 170,
-            child: ElevatedButton(
-                style: ButtonStyle(
-                  elevation: MaterialStateProperty.all(5),
-                    backgroundColor:
-                        MaterialStateProperty.all(AppColor.buttonColor)),
-                onPressed: () {},
-                child: Container(
-                    child: Text(
-                  'LOG IN / SIGN UP',
-                  style: TextStyle(color: AppColor.whiteColor),
-                ))))
+            child: CustomElevatedButton(
+              text: 'LOG IN / SIGN UP',
+              onPressed: () {
+                Get.bottomSheet(LoginBottomSheet());
+              },
+            ))
       ],
     );
   }

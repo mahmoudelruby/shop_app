@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class SPIcon extends StatelessWidget {
+class BottomNavBarIcon extends StatelessWidget {
   String assetName;
   bool isSelected;
 
-  SPIcon({required this.assetName,this.isSelected=false}) {}
+  BottomNavBarIcon({required this.assetName,this.isSelected=false}) {}
 
   @override
   Widget build(BuildContext context) {

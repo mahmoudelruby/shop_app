@@ -1,5 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import 'package:shop_app/features/home_Page/Home_Screen.dart';
 import 'package:shop_app/features/landing_Page/landing_page.dart';
 import 'package:shop_app/foundation/theme/colors.dart';
