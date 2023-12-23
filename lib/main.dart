@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import 'package:shop_app/features/home_Page/Home_Screen.dart';
 import 'package:shop_app/features/landing_Page/landing_page.dart';
+import 'package:shop_app/features/profile/profile_screen.dart';
 import 'package:shop_app/foundation/theme/colors.dart';
 import 'package:shop_app/foundation/theme/theme_data.dart';
 
@@ -21,6 +22,7 @@ class MyApplication extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         HomeScreen.routeName: (buildContext) => HomeScreen(),
+        ProfilePage.routeName: (buildContext) => ProfilePage(),
         LandingPage.routeName: (buildContext) => LandingPage()
       },
       initialRoute: LandingPage.routeName,
