@@ -5,6 +5,9 @@ import '../../foundation/custom_eleveted_button.dart';
 import '../../foundation/theme/colors.dart';
 
 class HeaderContent extends StatelessWidget {
+  /// Constructors for public widgets should have a named key parameter
+  const HeaderContent({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -24,7 +27,8 @@ class HeaderContent extends StatelessWidget {
         Positioned(
           bottom: 20,
           left: 20,
-          child: Container(
+          child: SizedBox(
+            /// Replace Container with sized box for bette performance
             height: 130,
             width: 130,
             child: Card(
@@ -41,7 +45,10 @@ class HeaderContent extends StatelessWidget {
             child: CustomElevatedButton(
               text: 'LOG IN / SIGN UP',
               onPressed: () {
-                Get.bottomSheet(LoginBottomSheet());
+                /// Use const with constructor to improve performance
+                Get.bottomSheet(
+                  const LoginBottomSheet(),
+                );
               },
             ))
       ],

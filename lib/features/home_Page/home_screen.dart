@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/features/home_Page/prduct_card/product.dart';
-import 'package:shop_app/features/home_Page/prduct_card/product_card.dart';
+
+///Error in naming the file the file should be lower case letter separated by underscores home_screen.dart
+import 'package:shop_app/features/home_Page/product_card/product.dart';
+
+/// Always remove unnecessary imports and watch out for these typo mistakes prduct ===> product
+// import 'package:shop_app/features/home_Page/prduct_card/product_card.dart';
 import 'package:shop_app/foundation/theme/colors.dart';
 
 class HomeScreen extends StatelessWidget {
-  static String routeName = "home";
+  /// Constructors for public widgets should have a named key parameter
+  /// Use const with constructor for better performance
+  const HomeScreen({Key? key}) : super(key: key);
+
+  /// const String as it won't change
+  static const String routeName = "home";
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +21,18 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColor.whiteColor,
         leading: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.arrow_back,
-              color: Colors.black,
-            )),
-        title: Column(
+          onPressed: () {},
+
+          /// Use 'const' with the constructor to improve performance.
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+        ),
+
+        /// Use 'const' with the constructor to improve performance.
+
+        title: const Column(
           children: [
             Text(
               'Men Cloths',
@@ -36,30 +51,36 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
         actions: [
+          /// Use 'const' with the constructor to improve performance.
+
           IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.search,
                 size: 28,
                 color: Colors.black,
               )),
           IconButton(
               onPressed: () {},
-              icon: Icon(
+
+              /// Use 'const' with the constructor to improve performance.
+              icon: const Icon(
                 Icons.favorite_border_outlined,
                 size: 28,
                 color: Colors.black,
               )),
           IconButton(
               onPressed: () {},
-              icon: Icon(
+              /// Use 'const' with the constructor to improve performance.
+              icon: const Icon(
                 Icons.shopping_bag_outlined,
                 size: 28,
                 color: Colors.black,
               )),
         ],
       ),
-      body: Product(),
+      /// Use 'const' with the constructor to improve performance.
+      body: const Product(),
     );
   }
 }

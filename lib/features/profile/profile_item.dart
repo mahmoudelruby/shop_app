@@ -2,12 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/foundation/sp_icon.dart';
 
 class ProfileItem extends StatelessWidget {
-  String title;
-  String? caption;
-  String iconPath;
-  Function()? onTab;
-  ProfileItem(
-      {required this.iconPath, required this.title, required this.caption,this.onTab}) ;
+  const ProfileItem({
+    Key? key,
+    required this.iconPath,
+    required this.title,
+    required this.caption,
+    this.onTab,
+  }) : super(key: key);
+
+  final String title;
+  final String? caption;
+  final String iconPath;
+  final void Function()? onTab;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +36,7 @@ class ProfileItem extends StatelessWidget {
                   )
                 : null,
             trailing: InkWell(
-              onTap: onTab ,
+              onTap: onTab,
               child: const Icon(
                 Icons.chevron_right,
                 size: 16,
@@ -38,7 +44,6 @@ class ProfileItem extends StatelessWidget {
             ),
           ),
         ),
-
       ],
     );
   }

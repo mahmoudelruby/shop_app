@@ -16,10 +16,12 @@ class RegisterPage extends StatelessWidget {
         centerTitle: false,
         leading: IconButton(
           onPressed: () {},
-          icon: Icon(Icons.arrow_back),
+          /// Use const with constructor to improve performance
+          icon: const Icon(Icons.arrow_back),
           color: Colors.black,
         ),
-        title: Text(
+        /// Use const with constructor to improve performance
+        title: const Text(
           'Complete Your Signup',
           style: TextStyle(
               color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
@@ -27,40 +29,55 @@ class RegisterPage extends StatelessWidget {
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+          /// Use const with constructor to improve performance
+          padding: const EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 50,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              /// Use const with constructor to improve performance
+              const Text(
                 'Register ',
-                style: TextStyle(color: AppColor.buttonColor, fontSize: 30),
+                style: TextStyle(
+                  color: AppColor.buttonColor,
+                  fontSize: 30,
+                ),
               ),
-              Text('New User '),
+              /// Use const with constructor to improve performance
+              const Text(
+                'New User ',
+              ),
               const SizedBox(
                 height: 35,
               ),
-              CustomTextFormField(
+              /// Use const with constructor to improve performance
+              const CustomTextFormField(
                 labelText: 'Email',
                 hintText: 'Enter your email',
               ),
               const SizedBox(
                 height: 15,
               ),
-              CustomTextFormField(
+              /// Use const with constructor to improve performance
+              const CustomTextFormField(
                 labelText: 'Password',
                 hintText: 'Enter password',
               ),
               const SizedBox(
                 height: 15,
               ),
-              CustomTextFormField(
+              /// Use const with constructor to improve performance
+              const CustomTextFormField(
                 labelText: 'Full Name',
                 hintText: 'Enter full name',
               ),
               const SizedBox(
                 height: 15,
               ),
-              CustomTextFormField(
+              /// Use const with constructor to improve performance
+              const CustomTextFormField(
                 labelText: 'Phone Number',
                 hintText: 'Enter your number',
               ),
@@ -68,12 +85,15 @@ class RegisterPage extends StatelessWidget {
                 height: 20,
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width,
+                /// width: MediaQuery.of(context).size.width, deprecated
+                width: MediaQuery.sizeOf(context).width,
                 child: CustomElevatedButton(
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ProfilePage()),
+                      /// Use const to improve performance
+
+                      MaterialPageRoute(builder: (context) => const ProfilePage()),
                     );
                   },
                   text: 'Register',

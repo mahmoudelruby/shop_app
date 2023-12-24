@@ -1,20 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shop_app/features/home_Page/Home_Screen.dart';
+import 'package:shop_app/features/home_Page/home_screen.dart';
 import 'package:shop_app/features/register_Page/register_page.dart';
 import 'package:shop_app/foundation/text_form_field.dart';
 import 'package:shop_app/foundation/theme/colors.dart';
 
 import '../../foundation/custom_eleveted_button.dart';
 
-class LoginBottomSheet extends StatelessWidget {
-  String? email = '';
-  String? password = '';
-  TextEditingController? mailController = new TextEditingController();
-  TextEditingController? passwordController = new TextEditingController();
+class LoginBottomSheet extends StatefulWidget {
+  /// Constructors for public widgets should have a named key parameter
+  const LoginBottomSheet({Key? key}) : super(key: key);
+
+  @override
+  State<LoginBottomSheet> createState() => _LoginBottomSheetState();
+}
+
+class _LoginBottomSheetState extends State<LoginBottomSheet> {
+  late final TextEditingController controller;
+
+  @override
+  void initState() {
+    /// When it is stateful initialize controllers in the init method
+    controller = TextEditingController();
+    super.initState();
+  }
+
+  /// And don't forget the dispose
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
+    /// remove unnecessary new keyword
+    /// Move the variables that changes with the widget to the build to be reset when the widget rebuilds
+    /// When you have a text editing controller in your widget convert it to stateful widget to use dispose method to remove it from memory
+    /// TextEditingController? mailController =  TextEditingController();
+    /// TextEditingController? passwordController =  TextEditingController();
+    /// String? email = '';
+    /// String? password = '';
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
       height: MediaQuery.of(context).size.height / 1.5,
@@ -68,14 +94,19 @@ class LoginBottomSheet extends StatelessWidget {
             const SizedBox(
               height: 35,
             ),
-            CustomTextFormField(
+
+            /// Use const keyword for better performance
+            const CustomTextFormField(
               labelText: 'Email',
               hintText: 'Enter your email',
             ),
             const SizedBox(
               height: 30,
             ),
-            CustomTextFormField(
+
+            /// Use const keyword for better performance
+
+            const CustomTextFormField(
               labelText: 'Password',
               hintText: 'Enter password',
             ),
@@ -85,7 +116,9 @@ class LoginBottomSheet extends StatelessWidget {
             Center(
                 child: Row(
               children: [
-                Text("New User ?"),
+                // Use const keyword for better performance
+
+                const Text("New User ?"),
                 InkWell(
                   onTap: () {
                     {
@@ -96,7 +129,10 @@ class LoginBottomSheet extends StatelessWidget {
                       );
                     }
                   },
-                  child: Text(
+
+                  /// Use const keyword for better performance
+
+                  child: const Text(
                     "Register ",
                     style: TextStyle(color: AppColor.buttonColor),
                   ),
@@ -107,35 +143,48 @@ class LoginBottomSheet extends StatelessWidget {
               height: 10,
             ),
             Center(
-                child: SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    child: CustomElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => HomeScreen()),
-                        );
-                      },
-                      text: 'CONTINUE',
-                    ))),
-            SizedBox(
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: CustomElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      /// Use const to improve performance
+
+                      MaterialPageRoute(builder: (context) => const HomeScreen()),
+                    );
+                  },
+                  text: 'CONTINUE',
+                ),
+              ),
+            ),
+
+            /// Use const keyword for better performance
+
+            const SizedBox(
               height: 20,
             ),
+
+            /// Use const keyword for better performance
+
             RichText(
-                text: TextSpan(children: [
-              const TextSpan(
-                  text: 'Having trouble logging in ?   ',
-                  style: TextStyle(
-                    color: Colors.black54,
-                    fontSize: 11.5,
-                  )),
-              TextSpan(
-                  text: 'Get Help ',
-                  style: TextStyle(
-                      color: AppColor.buttonColor,
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold)),
-            ])),
+              text: const TextSpan(
+                children: [
+                  TextSpan(
+                      text: 'Having trouble logging in ?   ',
+                      style: TextStyle(
+                        color: Colors.black54,
+                        fontSize: 11.5,
+                      )),
+                  TextSpan(
+                      text: 'Get Help ',
+                      style: TextStyle(
+                          color: AppColor.buttonColor,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold)),
+                ],
+              ),
+            ),
           ],
         ),
       ),
