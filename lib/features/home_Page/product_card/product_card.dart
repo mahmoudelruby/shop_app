@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/features/home_Page/prduct_card/product_description.dart';
+import 'package:shop_app/features/home_Page/product_card/product_description.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({Key? key}) : super(key: key);
@@ -7,7 +7,8 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(2),
+      /// Use 'const' with the constructor to improve performance.
+    margin: const EdgeInsets.all(2),
       child: Column(
         children: [
           SizedBox(
@@ -50,7 +51,9 @@ class ProductCard extends StatelessWidget {
               ],
             ),
           ),
-          ProductDescription(
+          // Use const with constructor for better performance
+
+          const ProductDescription(
             productName: 'shirt',
             productDesc: 'cotton',
             priceBefore: '599',

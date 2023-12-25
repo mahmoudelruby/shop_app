@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop_app/features/profile/footer_content.dart';
-import 'package:shop_app/features/profile/header%20content.dart';
+import 'package:shop_app/features/profile/header_content.dart';
 import 'package:shop_app/features/profile/profile_item.dart';
 import 'package:shop_app/foundation/theme/colors.dart';
 
@@ -14,7 +14,8 @@ class ProfileWithoutLogin extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        HeaderContent(),
+        /// Use const with constructor to improve performance
+        const HeaderContent(),
         const SizedBox(
           height: 10,
         ),
@@ -27,15 +28,20 @@ class ProfileWithoutLogin extends StatelessWidget {
                 title: 'Orders',
                 caption: 'Check your order',
                 onTab: () {
-                  Get.bottomSheet(LoginBottomSheet());
+                  /// Use const keyword for better performance
+                  Get.bottomSheet(const LoginBottomSheet());
                 },
               ),
-              ProfileItem(
+              /// Use const with constructor to improve performance
+
+              const ProfileItem(
                 iconPath: 'customer-support.png',
                 title: 'Help Center',
                 caption: 'Help regarding your recent purchase',
               ),
-              ProfileItem(
+              /// Use const with constructor to improve performance
+
+              const ProfileItem(
                 iconPath: 'wishlist.png',
                 title: 'Wishlist',
                 caption: 'Your most loved ',
@@ -48,7 +54,9 @@ class ProfileWithoutLogin extends StatelessWidget {
         ),
         Container(
           color: AppColor.whiteColor,
-          child: Column(
+          /// Use const with constructor to improve performance
+
+          child: const Column(
             children: [
               ProfileItem(
                 iconPath: 'qr-code-scan.png',
@@ -66,7 +74,8 @@ class ProfileWithoutLogin extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        FooterContent()
+        /// Use const with constructor to improve performance
+        const FooterContent()
       ],
     );
   }

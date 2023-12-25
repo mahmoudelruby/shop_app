@@ -5,6 +5,8 @@ import 'package:shop_app/foundation/theme/colors.dart';
 class ProfilePage extends StatefulWidget {
   static String routeName = "profile";
 
+  const ProfilePage({Key? key}) : super(key: key);
+
   @override
   State<ProfilePage> createState() => _State();
 }
